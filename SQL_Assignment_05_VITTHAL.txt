@@ -1,0 +1,99 @@
+
+
+1) What is syntax of instr() function and What is its usage?
+-->> It is used to find numeric position of given character in source string.
+     INSTR(INPUT_STRING,'SEARCH_STRING','START_INDEX','OCCURANCE')
+
+
+2) What is syntax of round() function and What is its usage?
+-->> It is used to round numerical value with given scale
+  ROUND(INPUT_NUMBER,SCALE)
+
+3) What is Syntax of trunc() function and What is its usage?
+--->>It is used to remove value withoutb rounding..
+    TRUNC(INPUT_STRING,SCALE)
+
+4) What is syntax of mod() function and What is its usage?
+--->> It is used to find reminder
+    MOD(INPUT_NUMBER,DIVISOR)
+
+5) What is mean by implict conversion?
+--->> Oracle engine automatically convert one data type value another data type value
+
+6) What is mean by explicit conversion?
+--->> Programmer is converting one data type value into another data type through functions
+
+7) Which function is used to convert string type date value into date 
+   date type?
+--->> TO_DATE
+
+8) Which function is used to convert date data type value into String
+   data type?
+--->> TO_CHAR
+
+9) Which function is used to convert number type value into char data 
+   type?
+--->> TO_CHAR
+
+10) Which function is used to convert char data type value into number?
+--->> TO_NUMBER
+
+11) How we convert date data type value into number?
+-->> TO_NUMBER
+
+12) How we convert number data type value into Date data type?
+-->> TO_DATE
+
+13) What are different functions to get today's date?
+-->> SYSDATE / CURRENT_DATE
+
+14) What are different functions to get today's date and time?
+-->>SYSTIMESTAMP
+
+15) What is use of MONTHS_BETWEEN function?
+--->>It is used to find number of months between two date
+
+16) What is use of Extract function?
+--->> it used extract month,day,year value from provided date
+
+17) What is use of NVL and NVL2 function?
+--->> NVL - It is used to provide alternative value if column value is null
+      NVL2 - It is used exp1 value is null then consider exp3 value and exp1 is not null then consider exp2.
+
+18) How NVL() function works?
+--->> NVL - It is used to provide alternative value if column value is null
+
+19) HOW NVL2() function works?
+-->> NVL2 - It is used exp1 value is null then consider exp3 value and exp1 is not null then consider exp2.
+
+20) What is difference NVL and NV2 function?
+--->>NVL - 1. NVL(EXP1,EXP2)
+           2. It is used to gives alternative value if EXP1 is null
+              If EXP1 is not null then consider same value..
+     NVL2 -1. NVL2(EXP1,EXP2,EXP3)
+           2. IF EXP1 is null then consider EXP3 and if EXP1 is not null then consider EXP2
+
+21) What are different group functions?
+--->>1. SUM()
+     2. AVG()
+     3. COUNT()
+     4. MIN()
+     5. MAX()
+
+22) What are different froms of count() function?
+--->> 1.COUNT(*)
+      2.COUNT(COLUMN_NAME)
+      3.COUNT(DISTINCT COLUMN_NAME)
+
+23) What is difference between count(*) and count(column_name)
+--->>>1.COUNT(*) - It count duplicate value and null value
+      2.COUNT(COLUMN_NAME)  -It count duplicate value and does not count null values
+
+24) What is difference between count(column_name) and count(distinct
+    column_name)
+---->> 1. COUNT(COLUMN_NAME)  -It count duplicate value and does not count null values
+       2. count(distinct column_name) - It does not count duplicate value and null values
+
+25) When we apply group function on column then how many values it       
+    returns?
+--->>  this function apply on group of column and generate single values.

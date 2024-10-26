@@ -1,0 +1,92 @@
+1. Which of the following correctly describes an inner 
+   query (subquery) in Oracle?
+
+A) A query that is executed independently of any other query
+B) A query that is embedded within another SQL query and executed first
+C) A query that is executed only after the outer query finishes
+D) A query that updates multiple tables simultaneously
+
+-->> C
+-------------------------------
+2. What is the maximum number of subqueries that can be 
+   nested in a single SQL query in Oracle?
+A) 16
+B) 32
+C) 255
+D) No defined limit
+
+--->> C
+-------------------------------
+3. Which of the following operators can be used with a 
+   subquery to filter results in Oracle?
+A) IN
+B) ANY
+C) ALL
+D) All of the above
+
+--->> A
+-------------------------------
+4. What will happen if a subquery returns NULL in a 
+   WHERE clause?
+A) The outer query will fail
+B) The outer query will not return any rows
+C) The outer query will return all rows
+D) It will cause a syntax error
+
+--->> B
+-------------------------------
+5. Which of the following types of subqueries return 
+   more than one row?
+A) Single-row subquery
+B) Multi-row subquery
+C) Scalar subquery
+D) Correlated subquery
+
+--->> B
+-------------------------------
+6. Which clause cannot use a subquery?
+A) HAVING
+B) WHERE
+C) GROUP BY
+D) FROM
+
+---->> C
+-------------------------------
+7. What is a correlated subquery?
+A) A subquery that is not dependent on the outer query
+B) A subquery that refers to columns in the outer query
+C) A subquery that executes multiple times for each row of the outer query
+D) Both B and C
+
+-->> D
+-------------------------------
+8. What will be the output of the following query?
+SELECT employee_id, salary 
+FROM employees 
+WHERE salary > (SELECT AVG(salary) FROM employees);
+
+A) Employees whose salary is higher than the average salary
+B) All employees
+C) Employees whose salary is lower than the average salary
+D) The query will throw an error
+
+--->> A
+-------------------------------
+9. What happens when a subquery returns multiple rows but is used with a comparison operator like =?
+
+A) It will return the first matching row
+B) It will return all matching rows
+C) It will result in an error
+D) It will return no rows
+
+--->> C
+-------------------------------
+10. Which of the following is a valid use case for a subquery in Oracle?
+
+A) To return data for a SELECT statement
+B) To provide data for an INSERT statement
+C) To filter rows in a WHERE clause
+D) All of the above
+
+--->> C
+-------------------------------

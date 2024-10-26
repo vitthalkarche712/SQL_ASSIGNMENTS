@@ -1,0 +1,156 @@
+1. What is the purpose of the GROUP BY clause in SQL?
+A) To filter rows based on a condition.
+B) To group rows that have the same values in specified 
+   columns into summary rows.
+C) To order the result set based on specific columns.
+D) To join two or more tables.
+-> B
+-------------------------
+2. Which of the following SQL clauses is used to filter the results of a 
+   GROUP BY clause?
+A) WHERE
+B) ORDER BY
+C) HAVING
+D) DISTINCT
+-> C
+-------------------------
+3. Which of the following is true about the HAVING clause?
+A) It is applied before the GROUP BY clause.
+B) It can be used without a GROUP BY clause.
+C) It is used to filter groups based on aggregate functions.
+D) It sorts the result set of a query.
+-> C
+-------------------------
+4. What does the following SQL query do?
+SELECT department_id, COUNT(*) 
+FROM employees 
+GROUP BY department_id 
+HAVING COUNT(*) > 10;
+A) It retrieves all departments with more than 10 employees.
+B) It retrieves all departments with exactly 10 employees.
+C) It retrieves all employees with department IDs greater than 10.
+D) It retrieves all departments without any condition on employees.
+-> A
+-------------------------
+5. In which order are WHERE, GROUP BY, HAVING, and ORDER BY clauses 
+   evaluated in a SQL query?
+A) WHERE → GROUP BY → HAVING → ORDER BY
+B) GROUP BY → WHERE → HAVING → ORDER BY
+C) ORDER BY → HAVING → GROUP BY → WHERE
+D) HAVING → WHERE → ORDER BY → GROUP BY
+-> A
+-------------------------
+6. What is the correct use of the ORDER BY clause in the following query?
+SELECT employee_id, salary FROM employees
+ORDER BY salary DESC;
+
+A) It orders the result set based on employee ID in ascending order.
+B) It orders the result set based on salary in ascending order.
+C) It orders the result set based on salary in descending order.
+D) It groups the rows based on salary.
+-> C
+-------------------------
+7. Which of the following is NOT true about the GROUP BY clause?
+A) It can be used with aggregate functions.
+B) It groups rows that have the same values in specified columns.
+C) It must always be followed by an ORDER BY clause.
+D) It can be used to group data from multiple columns.
+-> C
+-------------------------
+8. What will the following SQL query do?
+SELECT department_id, AVG(salary) 
+FROM employees 
+GROUP BY department_id 
+HAVING AVG(salary) > 5000;
+
+A) It groups the employees by department_id and filters out the departments where the average salary is greater than 5000.
+B) It returns all departments where the average salary is less than 5000.
+C) It groups the employees by salary and filters departments with more than 5000 employees.
+D) It returns all departments where the average salary is greater than 5000.
+-> A 
+-------------------------
+9. Which of the following SQL clauses is used to sort the result set?
+A) HAVING
+B) GROUP BY
+C) ORDER BY
+D) DISTINCT
+-> C
+-------------------------
+10. Which of the following queries is valid?
+A)SELECT employee_id, COUNT(*)
+FROM employees 
+HAVING COUNT(*) > 5;
+
+B)SELECT employee_id, COUNT(*)
+FROM employees
+GROUP BY employee_id
+HAVING COUNT(*) > 5;
+
+C)SELECT employee_id, COUNT(*)
+FROM employees
+GROUP BY employee_id
+WHERE COUNT(*) > 5;
+
+D)SELECT employee_id, COUNT(*)
+FROM employees
+WHERE COUNT(*) > 5;
+-> B
+
+-------------------------
+11. What will the following query return?
+SELECT department_id, SUM(salary) AS total_salary
+FROM employees
+GROUP BY department_id
+HAVING total_salary > 100000;
+
+A) It will return an error because total_salary is not an aggregate function.
+B) It will return departments with a total salary greater than 100000.
+C) It will return all departments, regardless of salary.
+D) It will return departments with a total salary less than 100000.
+-> A
+-------------------------
+12. Which SQL clause is used to restrict the rows returned by a query based on a specific condition before any grouping is done?
+A) HAVING
+B) GROUP BY
+C) ORDER BY
+D) WHERE
+-> D
+-------------------------
+13.Which of the following queries will return an error?
+A)SELECT department_id, MAX(salary)
+FROM employees
+GROUP BY department_id;
+
+B)SELECT department_id, employee_id, MAX(salary)
+FROM employees
+GROUP BY department_id, employee_id;
+
+C)SELECT department_id, employee_id, MAX(salary)
+FROM employees
+GROUP BY department_id;
+
+D)SELECT department_id, COUNT(*)
+FROM employees
+GROUP BY department_id;
+-> C
+-------------------------
+14. What does the HAVING clause typically work with?
+A) Non-aggregated columns
+B) Aggregated columns or expressions
+C) Unique rows only
+D) Distinct columns
+-> B
+-------------------------
+15. What will the following query return?
+SELECT department_id, AVG(salary)
+FROM employees
+GROUP BY department_id
+ORDER BY AVG(salary) DESC;
+
+A) It will return the average salary for each department, ordered by department ID.
+B) It will return the average salary for each department, ordered by average salary in ascending order.
+C) It will return the average salary for each department, ordered by average salary in descending order.
+D) It will return the average salary for each department, ordered by employee ID.
+-> Note: We can use Group Function in ORDER by clause.
+-> C
+-------------------------

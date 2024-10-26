@@ -1,0 +1,127 @@
+Date: 09-Oct-2024
+1.Write a SQL query to fetch “FIRST_NAME” from the Student table in upper 
+  case and use ALIAS name as STUDENT_NAME.
+-> select upper(FIRST_NAME) as STUDENT_NAME from Student;
+
+2. Write a SQL query to fetch unique values of subject_name from Student 
+   table
+-> 1. Select subject_name From Student group by subject_name;
+   2. select distinct subject_name From Student;
+
+3. Write a SQL query to print the first 3 characters of FIRST_NAME from 
+   Student table.
+-> select substr(FIRST_NAME,1,3)From Student;
+
+4. Write a SQL query to find the position of alphabet (‘a’) int the 
+   first name column ‘Shivansh’ from Student table
+-> select instr(first_name,'a') from student where first_name='Shivansh';
+   
+5. Write a SQL query that fetches the unique values of subject_name
+   from Student table and print its length.
+-> 1. select distinct subject_name,length(subject_name) from student;
+   2. select subject_name,length(subject_name) group by subject_name
+      From Student;
+	  
+6. Write a SQL query to print FIRST_NAME from the Student table after 
+   replacing ‘a’ with ‘A’
+-> Select REPLACE(FIRST_NAME,'a','A') from Student;
+   
+7. Write a SQL query to print the FIRST_NAME and LAST_NAME from Student 
+   table into single column COMPLETE_NAME. COMPLETE_NAME should have 
+   space between first_name and last_name
+-> select concat(FIRST_NAME,concat(' ',LAST_NAME)) as COMPLETE_NAME
+   From Student;   
+   
+8. Write a SQL query to print all Student details from Student 
+   table order by FIRST_NAME
+-> Select * from Student Order by FIRST_NAME;
+
+9. Write a SQL query to print details of the Students excluding 
+   FIRST_NAME as ‘Shiva’ and ‘Ravi’ from Student table.
+-> Select * from Student where FIRST_NAME NOT IN('Shiva’,'Ravi’);
+   
+10. Write a SQL query to print details of the Students whose 
+    FIRST_NAME ends with ‘a’
+->  Select * from Student where FIRST_NAME LIKE '%a';
+	
+11. Write an SQL query to print details of the Students whose 
+    FIRST_NAME ends with ‘a’ and contains six alphabets
+->  1.select * from student where FIRST_NAME like '_____a';
+	
+	2. select * from student where FIRST_NAME like '%a' AND 
+	   length(FIRST_NAME)=6;
+	
+12. Write an SQL query to fetch the count of Students having
+    subject_name ‘Computer Science’.
+->  select subject_name,count(*) From Student where subject_name='Computer 
+    Science' group by subject_name;
+
+13. Count subject_name wise Students
+->  select subject_name,count(*) From Student group by subject_name;
+
+14. Write an SQL query to show only odd rows from Student table
+-> Select * from Student where mod(rollno,2)!=0;
+
+15. Write an SQL query to show only even rows from Student table
+-> Select * from Student where mod(rollno,2)=0;
+
+16. Write an SQL query to show the  highest mark from a Student table
+->  select max(mark) as max_mark from Student;
+
+17. Write an SQL query to show the  second highest mark from a Student table
+->  select * from (select first_name,mark, DENSE_RANK() Over(Order by mark
+    desc) as rank from student) where rank=2;
+	
+18. Write an SQL query to show the  lowest mark from a Student table
+->  select min(mark) as min_mark from Student;
+
+19. Write an SQL query to show the  second lowest mark from a Student table.
+->  select * from (select first_name,mark, DENSE_RANK() Over(Order by mark
+    ASC) as rank from student) where rank=2;
+	
+20. Write an SQL query to fetch the first 50% records from a Student table
+-> select * from Student where rownum<=(select count(*) From student)*0.5
+
+21. Write an SQL query to show the first inserted record from a Student
+->  Select * from student where rownum<=1;
+
+22. Write an SQL query to show the last record from a Student.
+-> select * from (select * from Student Order by rollno desc) where 
+   rownum<=1 
+
+23. Write an SQL query to fetch the last five records from a Student table.
+-> select * from (select * from Student Order by rollno desc) where 
+   rownum<=5 order by rollno asc
+   
+24. Write an SQL query to display top 3 student who has max mark.
+->  select * from (select first_name,mark, DENSE_RANK() Over(Order by mark
+    Desc) as rank from student) where rank<=3;
+	
+25. Write an SQL query to display name of student has highest mark.
+->  select * from (select first_name,mark, DENSE_RANK() Over(Order by mark
+    Desc) as rank from student) where rank=1;
+	
+26. Write an SQL query to show the current date and time
+->  select sysdate,systimestamp from dual;
+->  select current_date,current_timestamp from dual;
+
+27. Write a query to create a new table which consists of data and 
+   structure copied from the other table (say Student) or clone 
+   the table named Student
+-> Create Table Student_Dummy as Select * from student;
+
+30. Write an SQL query to find subject_name wise avg mark
+->  select subject_name,avg(marks) from Student group by subject_name;
+
+31. Write an SQL query to increase the GPA of all the students in 
+   ‘Computer Science’ subject by 7.5.
+   here GPA is column name which aggregate marks.
+-> update table Student SET GAP=GPA+7.5 where subject_name='Computer Science'
+
+32. Write an SQL query to find the students who have the same 
+    mark  as ‘Shiva’.
+->  select * from Student where mark=(select mark from Student where 
+    sname='Shiva');
+
+32. Write SQL query to display duplicate Student names.
+->  select FIRST_NAME,count(*) From Student having count(*)>1;
